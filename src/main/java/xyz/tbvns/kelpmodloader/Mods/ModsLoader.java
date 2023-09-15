@@ -2,14 +2,15 @@ package xyz.tbvns.kelpmodloader.Mods;
 
 import xyz.tbvns.kelpmodloader.Constant;
 import xyz.tbvns.kelpmodloader.KelpModLoader;
-import xyz.tbvns.kelpmodloader.Pack.CreatePack;
 
-import java.io.*;
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.InputStream;
+import java.io.InputStreamReader;
 import java.lang.reflect.Method;
 import java.net.URL;
 import java.net.URLClassLoader;
 import java.nio.file.Path;
-import java.util.List;
 import java.util.jar.JarFile;
 
 public class ModsLoader {
@@ -17,7 +18,6 @@ public class ModsLoader {
         File datafolder = KelpModLoader.getPlugin(KelpModLoader.class).getDataFolder();
         String path = datafolder.getPath();
 
-        File PluginFolder = Path.of(path).toFile();
         File ModsFolder = Path.of(path + "/Mods").toFile();
 
         try {
@@ -27,10 +27,6 @@ public class ModsLoader {
             File[] ModsFiles = ModsFolder.listFiles();
             for (int i = 0; i < ModsFiles.length; i++) {
                 File mod = ModsFiles[i];
-                URLClassLoader child = new URLClassLoader(
-                        new URL[] {mod.toURI().toURL()},
-                        this.getClass().getClassLoader()
-                );
 
                 JarFile jarFile = new JarFile(mod);
                 InputStream ModIS = jarFile.getClass().getResourceAsStream("mods.yml");

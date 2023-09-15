@@ -2,8 +2,6 @@ package xyz.tbvns.kelpmodloader.Texture;
 
 import xyz.tbvns.kelpmodloader.Constant;
 
-import java.io.File;
-
 public class RegisterTexture {
     /**
      * Allow you to register a texture and add it to the resource pack.

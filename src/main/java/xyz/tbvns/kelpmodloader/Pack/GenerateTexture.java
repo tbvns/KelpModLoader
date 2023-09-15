@@ -2,12 +2,8 @@ package xyz.tbvns.kelpmodloader.Pack;
 
 import xyz.tbvns.kelpmodloader.Constant;
 import xyz.tbvns.kelpmodloader.KelpModLoader;
-import xyz.tbvns.kelpmodloader.Texture.TextureType;
-import xyz.tbvns.kelpmodloader.Texture.Textures;
 
-import java.io.BufferedWriter;
 import java.io.File;
-import java.io.FileWriter;
 import java.io.InputStream;
 import java.nio.file.Files;
 import java.nio.file.Path;
