@@ -1,0 +1,4 @@
+name: KelpModLoader
+version: '${project.version}'
+main: xyz.tbvns.kelpmodloader.KelpModLoader
+api-version: '1.20'
