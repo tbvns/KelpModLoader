@@ -13,7 +13,7 @@ import java.util.List;
 import java.util.jar.JarFile;
 
 public class ModsLoader {
-    public List<Mods> get() {
+    public void load() {
         File datafolder = KelpModLoader.getPlugin(KelpModLoader.class).getDataFolder();
         String path = datafolder.getPath();
 
@@ -65,8 +65,6 @@ public class ModsLoader {
 
         } catch (Exception e) {
             e.printStackTrace();
-            return null;
         }
-        return null;
     }
 }
