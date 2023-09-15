@@ -34,7 +34,7 @@ public final class KelpModLoader extends JavaPlugin {
         new RegisterBlock().Register("OtherBlock", "sandstone");
         new RegisterItem().register("YaY", "iron_ingot", Material.STONE_SWORD);
 
-
+        new ModsLoader().load();
 
         getServer().getConsoleSender().sendMessage( "\n" +
                 "§2---------------------------------- \n" +

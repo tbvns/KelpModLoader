@@ -58,10 +58,27 @@ public class ModsLoader {
                 mods.mainClass = ModMainClass[0];
                 mods.name = ModName[0];
                 mods.author = ModName[0];
+                mods.file = mod;
 
                 Constant.ModList.add(mods);
-
             }
+
+            Constant.ModList.forEach(Mod -> {
+                try {
+                    File ModFile = Mod.file;
+                    URLClassLoader ModCL = new URLClassLoader(
+                            new URL[] {ModFile.toURI().toURL()},
+                            this.getClass().getClassLoader()
+                    );
+                    Class classToLoad = Class.forName(Mod.mainClass, true, ModCL);
+                    Method method = classToLoad.getDeclaredMethod("load");
+                    Object instance = classToLoad.newInstance();
+                    Object result = method.invoke(instance);
+                    System.out.println(result);
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+            });
 
         } catch (Exception e) {
             e.printStackTrace();
