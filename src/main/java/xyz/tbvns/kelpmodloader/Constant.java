@@ -2,6 +2,7 @@ package xyz.tbvns.kelpmodloader;
 
 import xyz.tbvns.kelpmodloader.Block.ModdedBlock;
 import xyz.tbvns.kelpmodloader.Item.ModdedItem;
+import xyz.tbvns.kelpmodloader.Mods.Mods;
 import xyz.tbvns.kelpmodloader.Texture.Textures;
 
 import java.util.ArrayList;
@@ -13,4 +14,5 @@ public class Constant {
     public static ArrayList<ModdedBlock> Blocks = new ArrayList<>();
     public static ArrayList<ModdedItem> Items = new ArrayList<>();
     public static ArrayList<Textures> Textures = new ArrayList<>();
+    public static ArrayList<Mods> ModList = new ArrayList<>();
 }

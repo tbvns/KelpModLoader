@@ -36,8 +36,11 @@ public class ModsLoader {
                 InputStream ModIS = jarFile.getClass().getResourceAsStream("mods.yml");
                 BufferedReader ModISReader = new BufferedReader(new InputStreamReader(ModIS));
 
+                Mods mods = new Mods();
+
                 String[] ModMainClass = {""};
                 String[] ModName = {""};
+                String[] ModAuthor = {""};
 
                 ModISReader.lines().forEach(l -> {
                     if (l.startsWith("main: ")) {
@@ -46,13 +49,18 @@ public class ModsLoader {
                     } else if (l.startsWith("name: ")) {
                         String value = l.replaceFirst("name: ", "");
                         ModName[0] = value;
+                    } else if (l.startsWith("author: ")) {
+                        String value = l.replaceFirst("author: ", "");
+                        ModAuthor[0] = value;
                     }
                 });
 
-                Class classToLoad = Class.forName("com.MyClass", true, child);
-                Method method = classToLoad.getDeclaredMethod("myMethod");
-                Object instance = classToLoad.newInstance();
-                Object result = method.invoke(instance);
+                mods.mainClass = ModMainClass[0];
+                mods.name = ModName[0];
+                mods.author = ModName[0];
+
+                Constant.ModList.add(mods);
+
             }
 
         } catch (Exception e) {

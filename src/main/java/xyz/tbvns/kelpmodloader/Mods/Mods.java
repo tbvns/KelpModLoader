@@ -1,6 +1,7 @@
 package xyz.tbvns.kelpmodloader.Mods;
 
 public class Mods {
-    public String mainClasses;
-    public int StartOrder;
+    public String mainClass;
+    public String name;
+    public String author;
 }
