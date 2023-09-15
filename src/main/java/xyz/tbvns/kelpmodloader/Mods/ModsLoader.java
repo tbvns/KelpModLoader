@@ -29,7 +29,7 @@ public class ModsLoader {
                 File mod = ModsFiles[i];
 
                 JarFile jarFile = new JarFile(mod);
-                InputStream ModIS = jarFile.getClass().getResourceAsStream("mods.yml");
+                InputStream ModIS = jarFile.getInputStream(jarFile.getEntry("mods.yml"));
                 BufferedReader ModISReader = new BufferedReader(new InputStreamReader(ModIS));
 
                 Mods mods = new Mods();
@@ -70,7 +70,6 @@ public class ModsLoader {
                     Method method = classToLoad.getDeclaredMethod("load");
                     Object instance = classToLoad.newInstance();
                     Object result = method.invoke(instance);
-                    System.out.println(result);
                 } catch (Exception e) {
                     e.printStackTrace();
                 }
