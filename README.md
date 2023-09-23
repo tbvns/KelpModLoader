@@ -3,9 +3,10 @@
 A Minecraft mods loader 100% server side. (Very early alpha)
 
 ## Todo:
-- Working class loading
+- Working class loading (ETA: 50%)
 - Working dependency
 - Working spigot event to KML event
 - Working GUI
 - Working HUD
 - Working inventory
+- Working geyserMC compatibility
