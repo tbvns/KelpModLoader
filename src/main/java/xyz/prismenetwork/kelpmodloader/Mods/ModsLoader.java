@@ -1,7 +1,11 @@
-package xyz.tbvns.kelpmodloader.Mods;
+package xyz.prismenetwork.kelpmodloader.Mods;
 
-import xyz.tbvns.kelpmodloader.Constant;
-import xyz.tbvns.kelpmodloader.KelpModLoader;
+import org.bukkit.Material;
+import xyz.prismenetwork.kelpmodloader.Block.RegisterBlock;
+import xyz.prismenetwork.kelpmodloader.Constant;
+import xyz.prismenetwork.kelpmodloader.Item.RegisterItem;
+import xyz.prismenetwork.kelpmodloader.KelpModLoader;
+import xyz.prismenetwork.kelpmodloader.ModsAPI.Mods;
 
 import java.io.BufferedReader;
 import java.io.File;
@@ -32,7 +36,7 @@ public class ModsLoader {
                 InputStream ModIS = jarFile.getInputStream(jarFile.getEntry("mods.yml"));
                 BufferedReader ModISReader = new BufferedReader(new InputStreamReader(ModIS));
 
-                Mods mods = new Mods();
+                ModsObject mods = new ModsObject();
 
                 String[] ModMainClass = {""};
                 String[] ModName = {""};
@@ -69,7 +73,22 @@ public class ModsLoader {
                     Class classToLoad = Class.forName(Mod.mainClass, true, ModCL);
                     Method method = classToLoad.getDeclaredMethod("load");
                     Object instance = classToLoad.newInstance();
-                    Object result = method.invoke(instance);
+                    Object result = method.invoke(instance, new Mods());
+                    Mods mods = (Mods) result;
+
+                    mods.Items.forEach(i -> {
+                        try {
+                            new RegisterItem().register(i.get(0), i.get(1), Material.getMaterial(i.get(2)));
+                        } catch (Exception e) {
+                            e.printStackTrace();
+                        }
+                    });
+
+                    mods.Blocks.forEach(b -> {
+                        new RegisterBlock().Register(b.get(0), b.get(1));
+                    });
+
+
                 } catch (Exception e) {
                     e.printStackTrace();
                 }

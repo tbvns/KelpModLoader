@@ -1,6 +1,6 @@
-package xyz.tbvns.kelpmodloader.Texture;
+package xyz.prismenetwork.kelpmodloader.Texture;
 
-import xyz.tbvns.kelpmodloader.Constant;
+import xyz.prismenetwork.kelpmodloader.Constant;
 
 public class RegisterTexture {
     /**

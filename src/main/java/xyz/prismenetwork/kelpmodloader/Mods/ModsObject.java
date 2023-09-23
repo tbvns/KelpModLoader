@@ -1,8 +1,8 @@
-package xyz.tbvns.kelpmodloader.Mods;
+package xyz.prismenetwork.kelpmodloader.Mods;
 
 import java.io.File;
 
-public class Mods {
+public class ModsObject {
     public String mainClass;
     public String name;
     public String author;

@@ -1,6 +1,6 @@
-package xyz.tbvns.kelpmodloader.Block;
+package xyz.prismenetwork.kelpmodloader.Block;
 
-import xyz.tbvns.kelpmodloader.Constant;
+import xyz.prismenetwork.kelpmodloader.Constant;
 
 public class RegisterBlock {
     /**

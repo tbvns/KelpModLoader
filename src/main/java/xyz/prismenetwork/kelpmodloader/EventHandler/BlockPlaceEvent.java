@@ -1,4 +1,4 @@
-package xyz.tbvns.kelpmodloader.EventHandler;
+package xyz.prismenetwork.kelpmodloader.EventHandler;
 
 import org.bukkit.Location;
 import org.bukkit.Material;
@@ -10,9 +10,9 @@ import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.ItemMeta;
-import xyz.tbvns.kelpmodloader.Block.ModdedBlock;
-import xyz.tbvns.kelpmodloader.Constant;
-import xyz.tbvns.kelpmodloader.Utils;
+import xyz.prismenetwork.kelpmodloader.Block.ModdedBlock;
+import xyz.prismenetwork.kelpmodloader.Constant;
+import xyz.prismenetwork.kelpmodloader.Utils;
 
 import java.util.List;
 

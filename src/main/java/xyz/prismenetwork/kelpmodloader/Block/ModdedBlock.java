@@ -1,4 +1,4 @@
-package xyz.tbvns.kelpmodloader.Block;
+package xyz.prismenetwork.kelpmodloader.Block;
 
 public class ModdedBlock {
     public String name;

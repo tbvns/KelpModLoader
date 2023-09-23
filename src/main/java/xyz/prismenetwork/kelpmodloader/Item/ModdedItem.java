@@ -1,4 +1,4 @@
-package xyz.tbvns.kelpmodloader.Item;
+package xyz.prismenetwork.kelpmodloader.Item;
 
 import org.bukkit.Material;
 

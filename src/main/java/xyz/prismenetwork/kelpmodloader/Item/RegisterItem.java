@@ -1,7 +1,7 @@
-package xyz.tbvns.kelpmodloader.Item;
+package xyz.prismenetwork.kelpmodloader.Item;
 
 import org.bukkit.Material;
-import xyz.tbvns.kelpmodloader.Constant;
+import xyz.prismenetwork.kelpmodloader.Constant;
 
 public class RegisterItem {
     /**

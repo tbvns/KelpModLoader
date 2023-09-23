@@ -1,4 +1,4 @@
-package xyz.tbvns.kelpmodloader.EventHandler;
+package xyz.prismenetwork.kelpmodloader.EventHandler;
 
 import org.bukkit.Material;
 import org.bukkit.event.EventHandler;

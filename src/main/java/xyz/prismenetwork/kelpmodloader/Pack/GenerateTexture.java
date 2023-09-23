@@ -1,7 +1,7 @@
-package xyz.tbvns.kelpmodloader.Pack;
+package xyz.prismenetwork.kelpmodloader.Pack;
 
-import xyz.tbvns.kelpmodloader.Constant;
-import xyz.tbvns.kelpmodloader.KelpModLoader;
+import xyz.prismenetwork.kelpmodloader.Constant;
+import xyz.prismenetwork.kelpmodloader.KelpModLoader;
 
 import java.io.File;
 import java.io.InputStream;

@@ -1,10 +1,10 @@
-package xyz.tbvns.kelpmodloader.Pack;
+package xyz.prismenetwork.kelpmodloader.Pack;
 
 import org.bukkit.Material;
-import xyz.tbvns.kelpmodloader.Block.ModdedBlock;
-import xyz.tbvns.kelpmodloader.Constant;
-import xyz.tbvns.kelpmodloader.Item.ModdedItem;
-import xyz.tbvns.kelpmodloader.KelpModLoader;
+import xyz.prismenetwork.kelpmodloader.Block.ModdedBlock;
+import xyz.prismenetwork.kelpmodloader.Constant;
+import xyz.prismenetwork.kelpmodloader.Item.ModdedItem;
+import xyz.prismenetwork.kelpmodloader.KelpModLoader;
 
 import java.io.BufferedWriter;
 import java.io.File;

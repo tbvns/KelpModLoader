@@ -1,16 +1,16 @@
-package xyz.tbvns.kelpmodloader;
+package xyz.prismenetwork.kelpmodloader;
 
 import org.bukkit.Material;
 import org.bukkit.plugin.java.JavaPlugin;
-import xyz.tbvns.kelpmodloader.Block.CreateBlock;
-import xyz.tbvns.kelpmodloader.Block.RegisterBlock;
-import xyz.tbvns.kelpmodloader.EventHandler.BlockPlaceEvent;
-import xyz.tbvns.kelpmodloader.EventHandler.BlockUpdateEvent;
-import xyz.tbvns.kelpmodloader.Item.RegisterItem;
-import xyz.tbvns.kelpmodloader.Mods.ModsLoader;
-import xyz.tbvns.kelpmodloader.Pack.CreatePack;
-import xyz.tbvns.kelpmodloader.Texture.RegisterTexture;
-import xyz.tbvns.kelpmodloader.Texture.TextureType;
+import xyz.prismenetwork.kelpmodloader.Block.CreateBlock;
+import xyz.prismenetwork.kelpmodloader.Block.RegisterBlock;
+import xyz.prismenetwork.kelpmodloader.EventHandler.BlockPlaceEvent;
+import xyz.prismenetwork.kelpmodloader.EventHandler.BlockUpdateEvent;
+import xyz.prismenetwork.kelpmodloader.Item.RegisterItem;
+import xyz.prismenetwork.kelpmodloader.Mods.ModsLoader;
+import xyz.prismenetwork.kelpmodloader.Pack.CreatePack;
+import xyz.prismenetwork.kelpmodloader.Texture.RegisterTexture;
+import xyz.prismenetwork.kelpmodloader.Texture.TextureType;
 
 import java.io.IOException;
 

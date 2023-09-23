@@ -1,4 +1,4 @@
-package xyz.tbvns.kelpmodloader;
+package xyz.prismenetwork.kelpmodloader;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -28,8 +28,9 @@ public class Utils {
         return list;
     }
     /**
-     * Parse a string to a bool
+     * Parse a string to a boolean
      * (0 = false, 1 = true)
+     * @param s The string that will be parsed to boolean
      */
     public static boolean parseBool(String s) {
         if (s.equalsIgnoreCase("1")) {

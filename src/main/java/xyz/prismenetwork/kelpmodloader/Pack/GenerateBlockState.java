@@ -1,6 +1,6 @@
-package xyz.tbvns.kelpmodloader.Pack;
+package xyz.prismenetwork.kelpmodloader.Pack;
 
-import xyz.tbvns.kelpmodloader.Constant;
+import xyz.prismenetwork.kelpmodloader.Constant;
 
 import java.io.BufferedWriter;
 import java.io.File;

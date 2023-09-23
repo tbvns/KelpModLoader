@@ -1,10 +1,10 @@
-package xyz.tbvns.kelpmodloader.Block;
+package xyz.prismenetwork.kelpmodloader.Block;
 
 import org.bukkit.Material;
 import org.bukkit.Server;
 import org.bukkit.block.BlockFace;
 import org.bukkit.block.data.MultipleFacing;
-import xyz.tbvns.kelpmodloader.Constant;
+import xyz.prismenetwork.kelpmodloader.Constant;
 
 public class CreateBlock {
     public void Create(Server server) {
