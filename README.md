@@ -9,3 +9,4 @@ A Minecraft mods loader 100% server side. (Very early alpha)
 - Working GUI
 - Working HUD
 - Working inventory
+- Working geyserMC compatibility
