@@ -92,7 +92,7 @@ public class ModsLoader {
                     });
 
                     mods.Textures.forEach(t -> {
-                        new RegisterTexture().Register((String) t.get(0), (InputStream) t.get(1), (TextureType) t.get(2));
+                        new RegisterTexture().Register((String) t.get(0), (InputStream) t.get(2), (TextureType) t.get(1));
                     });
 
 
