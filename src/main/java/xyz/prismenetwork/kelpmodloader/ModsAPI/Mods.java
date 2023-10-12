@@ -43,7 +43,7 @@ public class Mods {
         ArrayList Texture = new ArrayList<>();
         Texture.add(name);
         Texture.add(type);
-        Texture.add(this.getClass().getResourceAsStream(path));
+        Texture.add(getClass().getResourceAsStream(path));
         Textures.add(Texture);
     }
 }

@@ -41,6 +41,12 @@ public final class KelpModLoader extends JavaPlugin {
             e.printStackTrace();
         }
         new CreateBlock().Create(getServer());
+
+        getServer().getConsoleSender().sendMessage( "\n" +
+                "§2---------------------------------- \n" +
+                "§2Status: §aDone                \n" +
+                "§2Task: §aKML is loaded!      \n" +
+                "§2---------------------------------- ");
     }
 
     @Override
