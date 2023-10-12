@@ -1,15 +1,9 @@
 package xyz.prismenetwork.kelpmodloader.ModsAPI;
 
-import org.bukkit.Material;
-import xyz.prismenetwork.kelpmodloader.Block.ModdedBlock;
-import xyz.prismenetwork.kelpmodloader.Block.RegisterBlock;
-import xyz.prismenetwork.kelpmodloader.Item.ModdedItem;
-import xyz.prismenetwork.kelpmodloader.Item.RegisterItem;
 import xyz.prismenetwork.kelpmodloader.Texture.TextureType;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Objects;
 
 public class Mods {
     public List<ArrayList<String>> Items = new ArrayList<>();
@@ -50,6 +44,6 @@ public class Mods {
         Texture.add(name);
         Texture.add(type);
         Texture.add(this.getClass().getResourceAsStream(path));
-        Blocks.add(Texture);
+        Textures.add(Texture);
     }
 }

@@ -87,12 +87,4 @@
             <scope>provided</scope>
         </dependency>
     </dependencies>
-
-    <distributionManagement>
-        <repository>
-            <id>prisme</id>
-            <name>Prisme Repository</name>
-            <url>http://repo.prisme-network.xyz:20300/releases</url>
-        </repository>
-    </distributionManagement>
 </project>
