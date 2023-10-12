@@ -29,10 +29,7 @@ public final class KelpModLoader extends JavaPlugin {
         getServer().getPluginManager().registerEvents(new BlockPlaceEvent(), this);
 
         //Blocks/Textures/Items test
-        new RegisterTexture().Register("yay", "/texture/yay.png", TextureType.Block());
-        new RegisterBlock().Register("Block", "yay");
-        new RegisterBlock().Register("OtherBlock", "sandstone");
-        new RegisterItem().register("YaY", "iron_ingot", Material.STONE_SWORD);
+        new RegisterTexture().Register("yay", this.getClass().getResourceAsStream("/texture/yay.png"), TextureType.Block());
 
         new ModsLoader().load();
 

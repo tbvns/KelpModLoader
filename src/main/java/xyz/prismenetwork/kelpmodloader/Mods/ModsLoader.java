@@ -6,12 +6,16 @@ import xyz.prismenetwork.kelpmodloader.Constant;
 import xyz.prismenetwork.kelpmodloader.Item.RegisterItem;
 import xyz.prismenetwork.kelpmodloader.KelpModLoader;
 import xyz.prismenetwork.kelpmodloader.ModsAPI.Mods;
+import xyz.prismenetwork.kelpmodloader.Texture.RegisterTexture;
+import xyz.prismenetwork.kelpmodloader.Texture.TextureType;
 
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.lang.reflect.Method;
+import java.lang.reflect.Parameter;
+import java.lang.reflect.ParameterizedType;
 import java.net.URL;
 import java.net.URLClassLoader;
 import java.nio.file.Path;
@@ -71,7 +75,8 @@ public class ModsLoader {
                             this.getClass().getClassLoader()
                     );
                     Class classToLoad = Class.forName(Mod.mainClass, true, ModCL);
-                    Method method = classToLoad.getDeclaredMethod("load");
+                    Class[] parameterType = {Mods.class};
+                    Method method = classToLoad.getDeclaredMethod("load", parameterType);
                     Object instance = classToLoad.newInstance();
                     Object result = method.invoke(instance, new Mods());
                     Mods mods = (Mods) result;
@@ -86,6 +91,10 @@ public class ModsLoader {
 
                     mods.Blocks.forEach(b -> {
                         new RegisterBlock().Register(b.get(0), b.get(1));
+                    });
+
+                    mods.Textures.forEach(t -> {
+                        new RegisterTexture().Register((String) t.get(0), (InputStream) t.get(1), (TextureType) t.get(2));
                     });
 
 

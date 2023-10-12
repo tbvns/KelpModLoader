@@ -19,7 +19,7 @@ public class GenerateBlockState {
         final String[] BlockState = {""};
 
         Constant.Blocks.forEach(B -> {
-            String BS = "{\"apply\": {\"model\": \"minecraft:block/" + B.TextureName +"\"},\"when\": " + generateWhen(B.getId());
+            String BS = "{\"apply\": {\"model\": \"minecraft:block/kml_" + B.TextureName +"\"},\"when\": " + generateWhen(B.getId());
             String Separator = ",";
             BlocksStates.add(BS);
             BlocksStates.add(Separator);

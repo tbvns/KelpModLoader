@@ -28,14 +28,14 @@ public class GenerateModel {
 
         //Generate bloc models:
         Blocks.forEach(B -> {
-            String middle = "{\"predicate\": {\"custom_model_data\":" + (B.getId() + 1) +"}, \"model\": \"block/" + B.TextureName +"\"}";
+            String middle = "{\"predicate\": {\"custom_model_data\":" + (B.getId() + 1) +"}, \"model\": \"block/kml_" + B.TextureName +"\"}";
             String separator = ",";
 
             ModelDataStrings.add(middle);
             ModelDataStrings.add(separator);
 
-            File BlockItemModels = new File(itemModelFile.getPath() + "/" + B.TextureName + ".json");
-            File BlockModels = new File(blockModelFile.getPath() + "/" + B.TextureName + ".json");
+            File BlockItemModels = new File(itemModelFile.getPath() + "/kml_" + B.TextureName + ".json");
+            File BlockModels = new File(blockModelFile.getPath() + "/kml_" + B.TextureName + ".json");
             if (!BlockItemModels.exists()) {
                 try {
                     BlockItemModels.createNewFile();
@@ -43,7 +43,7 @@ public class GenerateModel {
                     throw new RuntimeException(e);
                 }
             }
-            String JsonModel = "{\"parent\": \"minecraft:block/cube_all\",\"textures\": {\"all\": \"minecraft:block/" + B.TextureName + "\"}}";
+            String JsonModel = "{\"parent\": \"minecraft:block/cube_all\",\"textures\": {\"all\": \"minecraft:block/kml_" + B.TextureName + "\"}}";
             try {
                 BufferedWriter writer1 = new BufferedWriter(new FileWriter(BlockItemModels, false));
                 writer1.write(JsonModel);
@@ -83,13 +83,13 @@ public class GenerateModel {
                 KelpModLoader.getPlugin(KelpModLoader.class).getLogger().warning("You are using \"STONE\" as a material for item \"" + I.Name + "\". This will cause issue.");
             }
             if (MaterialsJson.containsKey(I.ItemMaterial)) {
-                String s = "{\"predicate\": {\"custom_model_data\":" + (I.getId() + 1) +"}, \"model\": \"item/" + I.TextureName +"\"}";
+                String s = "{\"predicate\": {\"custom_model_data\":" + (I.getId() + 1) +"}, \"model\": \"item/kml_" + I.TextureName +"\"}";
                 MaterialsJson.put(I.ItemMaterial, MaterialsJson.get(I.ItemMaterial) + "," + s);
             } else {
-                String s = "{\"predicate\": {\"custom_model_data\":" + (I.getId() + 1) +"}, \"model\": \"item/" + I.TextureName +"\"}";
+                String s = "{\"predicate\": {\"custom_model_data\":" + (I.getId() + 1) +"}, \"model\": \"item/kml_" + I.TextureName +"\"}";
                 MaterialsJson.put(I.ItemMaterial, s);
             }
-            String path = itemModelFile.getPath() + "/" + I.TextureName + ".json";
+            String path = itemModelFile.getPath() + "/kml_" + I.TextureName + ".json";
             File ModelsFile = new File(path);
             try {
                 if (!ModelsFile.exists()) {
@@ -97,7 +97,7 @@ public class GenerateModel {
                 }
 
                 BufferedWriter FileWriter = new BufferedWriter(new FileWriter(ModelsFile, false));
-                FileWriter.write("{\"parent\": \"minecraft:item/generated\",\"textures\": {\"layer0\": \"minecraft:item/" + I.TextureName +"\"}}");
+                FileWriter.write("{\"parent\": \"minecraft:item/generated\",\"textures\": {\"layer0\": \"minecraft:item/kml_" + I.TextureName +"\"}}");
                 FileWriter.close();
 
             } catch (Exception e) {

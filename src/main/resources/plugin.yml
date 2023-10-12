@@ -1,4 +1,4 @@
 name: KelpModLoader
 version: '${project.version}'
-main: xyz.tbvns.kelpmodloader.KelpModLoader
+main: xyz.prismenetwork.kelpmodloader.KelpModLoader
 api-version: '1.20'

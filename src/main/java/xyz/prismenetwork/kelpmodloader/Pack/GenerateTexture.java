@@ -13,14 +13,14 @@ public class GenerateTexture {
     public void generate(File TextureFolder) {
         Constant.Textures.forEach(t -> {
             try {
-                InputStream is = KelpModLoader.class.getResourceAsStream(t.path);
+                InputStream is = t.image;
 
                 File TextureTypeFolder = new File(TextureFolder.getPath() + "/" + t.textureType.getType());
                 if (!TextureTypeFolder.exists()) {
                     TextureTypeFolder.createNewFile();
                 }
 
-                String path = TextureFolder.getPath() + "/" + t.textureType.getType() + "/" + t.name + ".png";
+                String path = TextureFolder.getPath() + "/" + t.textureType.getType() + "/kml_" + t.name + ".png";
 
                 Files.copy(is, Path.of(path), StandardCopyOption.REPLACE_EXISTING);
 
