@@ -9,10 +9,7 @@ import xyz.prismenetwork.kelpmodloader.ModsAPI.Mods;
 import xyz.prismenetwork.kelpmodloader.Texture.RegisterTexture;
 import xyz.prismenetwork.kelpmodloader.Texture.TextureType;
 
-import java.io.BufferedReader;
-import java.io.File;
-import java.io.InputStream;
-import java.io.InputStreamReader;
+import java.io.*;
 import java.lang.reflect.Method;
 import java.net.URL;
 import java.net.URLClassLoader;
@@ -92,7 +89,8 @@ public class ModsLoader {
                     });
 
                     mods.Textures.forEach(t -> {
-                        new RegisterTexture().Register((String) t.get(0), ModCL.getResourceAsStream((String) t.get(2)), (TextureType) t.get(1));
+                        System.out.println(t.get(2));
+                        new RegisterTexture().Register((String) t.get(0), (File) t.get(2), (TextureType) t.get(1));
                     });
 
 

@@ -2,6 +2,8 @@ package xyz.prismenetwork.kelpmodloader.ModsAPI;
 
 import xyz.prismenetwork.kelpmodloader.Texture.TextureType;
 
+import java.io.File;
+import java.net.URISyntaxException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -39,11 +41,11 @@ public class Mods {
      * @param type The type of texture that will be loaded.
      * @param path The path of the image file (e.g "/texture/yay.png" referring to "src/main/resources/texture/yay.png").
      */
-    public void addTexture(String name, TextureType type, String path) {
+    public void addTexture(String name, TextureType type, String path) throws URISyntaxException {
         ArrayList Texture = new ArrayList<>();
         Texture.add(name);
         Texture.add(type);
-        Texture.add(path);
+        Texture.add(new File(getClass().getClassLoader().getResource(path).toURI()));
         Textures.add(Texture);
     }
 }

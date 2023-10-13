@@ -9,7 +9,9 @@ import xyz.prismenetwork.kelpmodloader.Pack.CreatePack;
 import xyz.prismenetwork.kelpmodloader.Texture.RegisterTexture;
 import xyz.prismenetwork.kelpmodloader.Texture.TextureType;
 
+import java.io.File;
 import java.io.IOException;
+import java.net.URISyntaxException;
 
 public final class KelpModLoader extends JavaPlugin {
 
@@ -26,7 +28,11 @@ public final class KelpModLoader extends JavaPlugin {
         getServer().getPluginManager().registerEvents(new BlockPlaceEvent(), this);
 
         //Blocks/Textures/Items test
-        new RegisterTexture().Register("yay", this.getClass().getResourceAsStream("/texture/yay.png"), TextureType.Block());
+        try {
+            new RegisterTexture().Register("yay", new File(getClass().getClassLoader().getResource("/texture/yay.png").toURI()), TextureType.Block());
+        } catch (URISyntaxException e) {
+            throw new RuntimeException(e);
+        }
 
         new ModsLoader().load();
 
