@@ -13,7 +13,7 @@ public class GenerateTexture {
     public void generate(File TextureFolder) {
         Constant.Textures.forEach(t -> {
             try {
-                InputStream is = new FileInputStream(t.image);
+                InputStream is =t.image;
 
                 File TextureTypeFolder = new File(TextureFolder.getPath() + "/" + t.textureType.getType());
                 if (!TextureTypeFolder.exists()) {

@@ -2,7 +2,6 @@ package xyz.prismenetwork.kelpmodloader.Texture;
 
 import xyz.prismenetwork.kelpmodloader.Constant;
 
-import java.io.File;
 import java.io.InputStream;
 
 public class RegisterTexture {
@@ -12,7 +11,7 @@ public class RegisterTexture {
      * @param image The input stream from the resources.
      * @param textureType Describe what this texture will be used for.
      */
-    public void Register(String name, File image, TextureType textureType) {
+    public void Register(String name, InputStream image, TextureType textureType) {
         Textures textures = new Textures();
         textures.name = name;
         textures.image = image;

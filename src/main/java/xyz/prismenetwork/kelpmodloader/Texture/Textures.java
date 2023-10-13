@@ -5,6 +5,6 @@ import java.io.InputStream;
 
 public class Textures {
     public String name = "";
-    public File image;
+    public InputStream image;
     public TextureType textureType;
 }

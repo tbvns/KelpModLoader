@@ -28,7 +28,7 @@ public final class KelpModLoader extends JavaPlugin {
         getServer().getPluginManager().registerEvents(new BlockPlaceEvent(), this);
 
         //Blocks/Textures/Items test
-        new RegisterTexture().Register("yay", new File(getClass().getClassLoader().getResource("texture/yay.png").toExternalForm()), TextureType.Block());
+        new RegisterTexture().Register("yay", getClass().getClassLoader().getResourceAsStream("texture/yay.png"), TextureType.Block());
 
         new ModsLoader().load();
 
@@ -46,7 +46,7 @@ public final class KelpModLoader extends JavaPlugin {
 
         getServer().getConsoleSender().sendMessage( "\n" +
                 "§2---------------------------------- \n" +
-                "§2Status: §aDone                \n" +
+                "§2Status: §aStarted                \n" +
                 "§2Task: §aKML is loaded!      \n" +
                 "§2---------------------------------- ");
     }

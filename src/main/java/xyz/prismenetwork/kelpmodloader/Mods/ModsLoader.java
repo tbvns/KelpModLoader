@@ -1,6 +1,7 @@
 package xyz.prismenetwork.kelpmodloader.Mods;
 
 import org.bukkit.Material;
+import org.slf4j.Logger;
 import xyz.prismenetwork.kelpmodloader.Block.RegisterBlock;
 import xyz.prismenetwork.kelpmodloader.Constant;
 import xyz.prismenetwork.kelpmodloader.Item.RegisterItem;
@@ -66,6 +67,7 @@ public class ModsLoader {
             Constant.ModList.forEach(Mod -> {
                 try {
                     File ModFile = Mod.file;
+                    JarFile ModJarFile = new JarFile(ModFile);
                     URLClassLoader ModCL = new URLClassLoader(
                             new URL[] {ModFile.toURI().toURL()},
                             this.getClass().getClassLoader()
@@ -81,7 +83,7 @@ public class ModsLoader {
                         try {
                             new RegisterItem().register(i.get(0), i.get(1), Material.getMaterial(i.get(2)));
                         } catch (Exception e) {
-                            e.printStackTrace();
+                            KelpModLoader.getPlugin(KelpModLoader.class).getServer().getConsoleSender().sendMessage("§4The item §c" + i.get(0) + " §4from the mod §c" + Mod.name + " §4has not loaded properly.");
                         }
                     });
 
@@ -90,17 +92,16 @@ public class ModsLoader {
                     });
 
                     mods.Textures.forEach(t -> {
-                        System.out.println(t.get(2));
                         try {
-                            new RegisterTexture().Register((String) t.get(0), new File(classToLoad.getResource((String) t.get(2)).toURI()), (TextureType) t.get(1));
-                        } catch (URISyntaxException e) {
-                            throw new RuntimeException(e);
+                            new RegisterTexture().Register((String) t.get(0), ModJarFile.getInputStream(ModJarFile.getJarEntry((String) t.get(2))), (TextureType) t.get(1));
+                        } catch (Exception e) {
+                            KelpModLoader.getPlugin(KelpModLoader.class).getServer().getConsoleSender().sendMessage("§4The texture §c" + t.get(0) + " §4from the mod §c" + Mod.name + " §4has not loaded properly.");
                         }
                     });
 
 
                 } catch (Exception e) {
-                    System.out.println(e.getCause());
+                    e.printStackTrace();
                 }
             });
 
