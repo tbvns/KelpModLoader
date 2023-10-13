@@ -28,11 +28,7 @@ public final class KelpModLoader extends JavaPlugin {
         getServer().getPluginManager().registerEvents(new BlockPlaceEvent(), this);
 
         //Blocks/Textures/Items test
-        try {
-            new RegisterTexture().Register("yay", new File(getClass().getClassLoader().getResource("/texture/yay.png").toURI()), TextureType.Block());
-        } catch (URISyntaxException e) {
-            throw new RuntimeException(e);
-        }
+        new RegisterTexture().Register("yay", new File(getClass().getClassLoader().getResource("texture/yay.png").toExternalForm()), TextureType.Block());
 
         new ModsLoader().load();
 

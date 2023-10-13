@@ -11,6 +11,7 @@ import xyz.prismenetwork.kelpmodloader.Texture.TextureType;
 
 import java.io.*;
 import java.lang.reflect.Method;
+import java.net.URISyntaxException;
 import java.net.URL;
 import java.net.URLClassLoader;
 import java.nio.file.Path;
@@ -90,12 +91,16 @@ public class ModsLoader {
 
                     mods.Textures.forEach(t -> {
                         System.out.println(t.get(2));
-                        new RegisterTexture().Register((String) t.get(0), (File) t.get(2), (TextureType) t.get(1));
+                        try {
+                            new RegisterTexture().Register((String) t.get(0), new File(classToLoad.getResource((String) t.get(2)).toURI()), (TextureType) t.get(1));
+                        } catch (URISyntaxException e) {
+                            throw new RuntimeException(e);
+                        }
                     });
 
 
                 } catch (Exception e) {
-                    e.printStackTrace();
+                    System.out.println(e.getCause());
                 }
             });
 
