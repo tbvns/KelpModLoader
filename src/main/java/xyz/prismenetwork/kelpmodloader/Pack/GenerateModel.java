@@ -79,6 +79,7 @@ public class GenerateModel {
         //Generate Item models
         HashMap<Material, String> MaterialsJson = new HashMap<>();
         Items.forEach(I -> {
+            System.out.println(I.Name + " - "+ I.getId());
             if (I.ItemMaterial.equals(Material.STONE)) {
                 KelpModLoader.getPlugin(KelpModLoader.class).getLogger().warning("You are using \"STONE\" as a material for item \"" + I.Name + "\". This will cause issue.");
             }
