@@ -10,7 +10,6 @@ public class ItemUtils {
     public static boolean isModed(ItemStack itemStack) {
         if (itemStack.hasItemMeta()) {
             ItemMeta itemMeta = itemStack.getItemMeta();
-            System.out.println(itemMeta.getCustomModelData());
             if (itemMeta.getCustomModelData() != 0) {
                 return true;
             }
@@ -28,7 +27,6 @@ public class ItemUtils {
             if (itemMeta.getCustomModelData() != 0) {
                 for (int i = 0; i < Constant.Items.size(); i++) {
                     ModdedItem item = Constant.Items.get(i);
-                    System.out.println(Constant.Items.get(i).getId());
                     if (itemMeta.getCustomModelData() - 1 == item.getId() && itemStack.getType() == item.ItemMaterial) {
                         return item;
                     }
@@ -48,7 +46,6 @@ public class ItemUtils {
             if (itemMeta.getCustomModelData() != 0) {
                 for (int i = 0; i < Constant.Blocks.size(); i++) {
                     ModdedBlock moddedBlock = Constant.Blocks.get(i);
-                    System.out.println(Constant.Blocks.get(i).getId());
                     if (itemMeta.getCustomModelData() - 1 == moddedBlock.getId()) {
                         return moddedBlock;
                     }
