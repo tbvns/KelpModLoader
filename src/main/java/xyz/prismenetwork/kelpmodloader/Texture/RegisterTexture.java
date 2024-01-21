@@ -12,11 +12,11 @@ public class RegisterTexture {
      * @param textureType Describe what this texture will be used for.
      */
     public void Register(String name, InputStream image, TextureType textureType) {
-        Textures textures = new Textures();
-        textures.name = name;
-        textures.image = image;
-        textures.textureType = textureType;
+        Texture texture = new Texture();
+        texture.name = name;
+        texture.image = image;
+        texture.textureType = textureType;
 
-        Constant.Textures.add(textures);
+        Constant.Textures.add(texture);
     }
 }

@@ -1,17 +1,14 @@
 package xyz.prismenetwork.kelpmodloader;
 
+import org.bukkit.Material;
 import org.bukkit.plugin.java.JavaPlugin;
 import xyz.prismenetwork.kelpmodloader.Block.CreateBlock;
 import xyz.prismenetwork.kelpmodloader.EventHandler.BlockPlaceEvent;
 import xyz.prismenetwork.kelpmodloader.EventHandler.BlockUpdateEvent;
 import xyz.prismenetwork.kelpmodloader.Mods.ModsLoader;
 import xyz.prismenetwork.kelpmodloader.Pack.CreatePack;
-import xyz.prismenetwork.kelpmodloader.Texture.RegisterTexture;
-import xyz.prismenetwork.kelpmodloader.Texture.TextureType;
 
-import java.io.File;
 import java.io.IOException;
-import java.net.URISyntaxException;
 
 public final class KelpModLoader extends JavaPlugin {
 

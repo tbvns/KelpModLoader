@@ -82,26 +82,37 @@ public class GenerateModel {
             if (I.ItemMaterial.equals(Material.STONE)) {
                 KelpModLoader.getPlugin(KelpModLoader.class).getLogger().warning("You are using \"STONE\" as a material for item \"" + I.Name + "\". This will cause issue.");
             }
-            if (MaterialsJson.containsKey(I.ItemMaterial)) {
-                String s = "{\"predicate\": {\"custom_model_data\":" + (I.getId() + 1) +"}, \"model\": \"item/kml_" + I.TextureName +"\"}";
-                MaterialsJson.put(I.ItemMaterial, MaterialsJson.get(I.ItemMaterial) + "," + s);
-            } else {
-                String s = "{\"predicate\": {\"custom_model_data\":" + (I.getId() + 1) +"}, \"model\": \"item/kml_" + I.TextureName +"\"}";
-                MaterialsJson.put(I.ItemMaterial, s);
-            }
-            String path = itemModelFile.getPath() + "/kml_" + I.TextureName + ".json";
-            File ModelsFile = new File(path);
-            try {
-                if (!ModelsFile.exists()) {
-                    ModelsFile.createNewFile();
+            if (I.ModelsName == null) {
+                if (MaterialsJson.containsKey(I.ItemMaterial)) {
+                    String s = "{\"predicate\": {\"custom_model_data\":" + (I.getId() + 1) +"}, \"model\": \"item/kml_" + I.TextureName +"\"}";
+                    MaterialsJson.put(I.ItemMaterial, MaterialsJson.get(I.ItemMaterial) + "," + s);
+                } else {
+                    String s = "{\"predicate\": {\"custom_model_data\":" + (I.getId() + 1) +"}, \"model\": \"item/kml_" + I.TextureName +"\"}";
+                    MaterialsJson.put(I.ItemMaterial, s);
                 }
 
-                BufferedWriter FileWriter = new BufferedWriter(new FileWriter(ModelsFile, false));
-                FileWriter.write("{\"parent\": \"minecraft:item/generated\",\"textures\": {\"layer0\": \"minecraft:item/kml_" + I.TextureName +"\"}}");
-                FileWriter.close();
+                String path = itemModelFile.getPath() + "/kml_" + I.TextureName + ".json";
+                File ModelsFile = new File(path);
+                try {
+                    if (!ModelsFile.exists()) {
+                        ModelsFile.createNewFile();
+                    }
 
-            } catch (Exception e) {
-                e.printStackTrace();
+                    BufferedWriter FileWriter = new BufferedWriter(new FileWriter(ModelsFile, false));
+                    FileWriter.write("{\"parent\": \"minecraft:item/generated\",\"textures\": {\"layer0\": \"minecraft:item/kml_" + I.TextureName +"\"}}");
+                    FileWriter.close();
+
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+            } else {
+                if (MaterialsJson.containsKey(I.ItemMaterial)) {
+                    String s = "{\"predicate\": {\"custom_model_data\":" + (I.getId() + 1) +"}, \"model\": \"models/kml_" + I.ModelsName +"\"}";
+                    MaterialsJson.put(I.ItemMaterial, MaterialsJson.get(I.ItemMaterial) + "," + s);
+                } else {
+                    String s = "{\"predicate\": {\"custom_model_data\":" + (I.getId() + 1) +"}, \"model\": \"models/kml_" + I.ModelsName +"\"}";
+                    MaterialsJson.put(I.ItemMaterial, s);
+                }
             }
         });
         MaterialsJson.forEach((M, S) -> {

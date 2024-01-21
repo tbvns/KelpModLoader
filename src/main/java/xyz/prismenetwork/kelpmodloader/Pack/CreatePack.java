@@ -31,6 +31,7 @@ public class CreatePack {
         InputStream png = KelpModLoader.class.getResourceAsStream("/Pack/pack.png");
         File newmeta = new File(PackFolder.getPath() + "/pack.mcmeta");
         File newpng = new File(PackFolder.getPath() + "/pack.png");
+
         if (!newmeta.exists()) {
             newmeta.createNewFile();
         }
@@ -41,12 +42,10 @@ public class CreatePack {
         new GenerateBlockState().Generate(BlockStateFolder);
         new GenerateModel().Generate(BlockModelsFolder, ItemModelsFolder);
         new GenerateTexture().generate(TexturesFolder);
-
-
+        new GenerateJsonModels().generate(ModelsFolder);
 
         Files.copy(meta, newmeta.toPath(), StandardCopyOption.REPLACE_EXISTING);
         Files.copy(png, newpng.toPath(), StandardCopyOption.REPLACE_EXISTING);
-
 
         File zip = new File(PluginFolder.getPath() + "/Kelp-Generated-Pack.zip");
         Zip(PackFolder, zip);

@@ -6,6 +6,8 @@ import xyz.prismenetwork.kelpmodloader.Block.RegisterBlock;
 import xyz.prismenetwork.kelpmodloader.Constant;
 import xyz.prismenetwork.kelpmodloader.Item.RegisterItem;
 import xyz.prismenetwork.kelpmodloader.KelpModLoader;
+import xyz.prismenetwork.kelpmodloader.Models.ModelType;
+import xyz.prismenetwork.kelpmodloader.Models.RegisterModels;
 import xyz.prismenetwork.kelpmodloader.ModsAPI.Mods;
 import xyz.prismenetwork.kelpmodloader.Texture.RegisterTexture;
 import xyz.prismenetwork.kelpmodloader.Texture.TextureType;
@@ -81,9 +83,23 @@ public class ModsLoader {
 
                     mods.Items.forEach(i -> {
                         try {
-                            new RegisterItem().register(i.get(0), i.get(1), Material.getMaterial(i.get(2)));
+                            if (i.size() == 4) {
+                                new RegisterItem().register(i.get(0), i.get(1), Material.getMaterial(i.get(2)), i.get(3));
+                            } else {
+                                new RegisterItem().register(i.get(0), i.get(1), i.get(2), Material.getMaterial(i.get(3)), i.get(4));
+                            }
                         } catch (Exception e) {
                             KelpModLoader.getPlugin(KelpModLoader.class).getServer().getConsoleSender().sendMessage("§4The item §c" + i.get(0) + " §4from the mod §c" + Mod.name + " §4has not loaded properly.");
+                        }
+                    });
+
+                    mods.Models.forEach(M -> {
+                        try {
+                            ModelType type = new ModelType();
+                            type.setType((String) M.get(3));
+                            new RegisterModels().Register((String) M.get(0), ModJarFile.getInputStream(ModJarFile.getJarEntry((String) M.get(2))), type);
+                        } catch (Exception e) {
+                            KelpModLoader.getPlugin(KelpModLoader.class).getServer().getConsoleSender().sendMessage("§4The model §c" + M.get(0) + " §4from the mod §c" + Mod.name + " §4has not loaded properly: " + e.getMessage());
                         }
                     });
 
