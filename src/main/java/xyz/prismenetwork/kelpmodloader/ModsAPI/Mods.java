@@ -1,6 +1,7 @@
 package xyz.prismenetwork.kelpmodloader.ModsAPI;
 
 import org.bukkit.Server;
+import org.bukkit.plugin.Plugin;
 import xyz.prismenetwork.kelpmodloader.Constant;
 import xyz.prismenetwork.kelpmodloader.Item.ItemType;
 import xyz.prismenetwork.kelpmodloader.KelpModLoader;
@@ -18,12 +19,16 @@ public class Mods {
     public List<ArrayList> Textures = new ArrayList<>();
     public List<ArrayList> Models = new ArrayList<>();
     private Server server = KelpModLoader.getPlugin(KelpModLoader.class).getServer();
+    private Plugin plugin = KelpModLoader.getPlugin(KelpModLoader.class);
 
     /**
      * @return The running server instance
      */
     public Server getServer() {
         return server;
+    }
+    public Plugin getKMLplugin() {
+        return plugin;
     }
 
     /**
