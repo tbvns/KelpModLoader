@@ -3,9 +3,11 @@
 A Minecraft mods loader 100% server side. (Very early alpha)
 
 ## Todo:
-- Working class loading (ETA: 50%)
-- Working dependency
-- Working spigot event to KML event
+- Working class loading (ETA: 100%)
+- Working dependency (100% with jitpack.io)
+- Working spigot event to KML event (Curent workaround : allow mods to acesse to org.Bukkit.Server)
+- Custom block model
+- Custom item model
 - Working GUI
 - Working HUD
 - Working inventory
