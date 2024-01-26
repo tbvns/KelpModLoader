@@ -1,10 +1,11 @@
-package xyz.prismenetwork.kelpmodloader.Item;
+package xyz.prismenetwork.kelpmodloader.ModsAPI;
 
 import org.bukkit.Material;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.ItemMeta;
 import xyz.prismenetwork.kelpmodloader.Block.ModdedBlock;
 import xyz.prismenetwork.kelpmodloader.Constant;
+import xyz.prismenetwork.kelpmodloader.Item.ModdedItem;
 
 public class ItemUtils {
     public static boolean isModed(ItemStack itemStack) {
@@ -24,11 +25,22 @@ public class ItemUtils {
     public static ModdedItem getModedItem(ItemStack itemStack) {
         if (itemStack.hasItemMeta()) {
             ItemMeta itemMeta = itemStack.getItemMeta();
-            if (itemMeta.getCustomModelData() != 0) {
-                for (int i = 0; i < Constant.Items.size(); i++) {
-                    ModdedItem item = Constant.Items.get(i);
-                    if (itemMeta.getCustomModelData() - 1 == item.getId() && itemStack.getType() == item.ItemMaterial) {
-                        return item;
+            if (!itemStack.getType().isBlock()) {
+                if (itemMeta.getCustomModelData() != 0) {
+                    for (int i = 0; i < Constant.Items.size(); i++) {
+                        ModdedItem item = Constant.Items.get(i);
+                        if (!item.isBlockItem && itemMeta.getCustomModelData() - 1 == item.getId() && itemStack.getType() == item.ItemMaterial) {
+                            return item;
+                        }
+                    }
+                }
+            } else {
+                if (itemMeta.getCustomModelData() != 0) {
+                    for (int i = 0; i < Constant.Items.size(); i++) {
+                        ModdedItem item = Constant.Items.get(i);
+                        if (item.isBlockItem && itemMeta.getCustomModelData() == item.getId() - 1 && itemStack.getType() == Material.STONE) {
+                            return item;
+                        }
                     }
                 }
             }

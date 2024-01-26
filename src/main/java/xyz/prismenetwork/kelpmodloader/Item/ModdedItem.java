@@ -10,6 +10,7 @@ public class ModdedItem {
     public String Lore = "";
     public String itemType;
     public Material ItemMaterial = Material.STICK;
+    public boolean isBlockItem = false;
     /**
      * Return the id of the item.
      */
@@ -24,5 +25,6 @@ public class ModdedItem {
     public void setID(int nID) {
         id = nID;
     }
+
 
 }
