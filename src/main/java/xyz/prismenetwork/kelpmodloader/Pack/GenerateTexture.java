@@ -17,7 +17,7 @@ public class GenerateTexture {
 
                 File TextureTypeFolder = new File(TextureFolder.getPath() + "/" + t.textureType.getType());
                 if (!TextureTypeFolder.exists()) {
-                    TextureTypeFolder.createNewFile();
+                    TextureTypeFolder.mkdir();
                 }
 
                 String path = TextureFolder.getPath() + "/" + t.textureType.getType() + "/kml_" + t.name + ".png";

@@ -25,6 +25,7 @@ public class CreatePack {
         File ModelsFolder = Path.of(path + "/pack/assets/minecraft/models").toFile();
         File ItemModelsFolder = Path.of(path + "/pack/assets/minecraft/models/item").toFile();
         File BlockModelsFolder = Path.of(path + "/pack/assets/minecraft/models/block").toFile();
+
         CreateFileIfNotExiste(PluginFolder ,PackFolder, AssetFolder, MinecraftFolder, BlockStateFolder, TexturesFolder, BlockFolder, ModelsFolder, ItemModelsFolder, BlockModelsFolder);
 
         InputStream meta = KelpModLoader.class.getResourceAsStream("/Pack/pack.mcmeta");
