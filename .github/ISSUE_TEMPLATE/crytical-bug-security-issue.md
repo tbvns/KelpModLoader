@@ -2,7 +2,7 @@
 name: Crytical bug/security issue
 about: Report a crytical exploit/bug inside KML
 title: "[CRYTICAL]"
-labels: ''
+labels: crytical
 assignees: ''
 
 ---
