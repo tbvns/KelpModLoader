@@ -6,7 +6,7 @@ public class ModdedItem {
     private int id;
     public String TextureName = "";
     public String Name = "";
-    public String ModelsName = "";
+    public String ModelsName = null;
     public String Lore = "";
     public String itemType;
     public Material ItemMaterial = Material.STICK;
