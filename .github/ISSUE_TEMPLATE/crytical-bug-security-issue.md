@@ -1,6 +1,6 @@
 ---
 name: Crytical bug/security issue
-about: Describe this issue template's purpose here.
+about: Report a crytical exploit/bug inside KML
 title: "[CRYTICAL]"
 labels: ''
 assignees: ''
