@@ -1,5 +1,6 @@
 package xyz.prismenetwork.kelpmodloader.ModsAPI;
 
+import org.bukkit.Material;
 import org.bukkit.Server;
 import org.bukkit.plugin.Plugin;
 import xyz.prismenetwork.kelpmodloader.Constant;
@@ -14,8 +15,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Mods {
-    public List<ArrayList<String>> Items = new ArrayList<>();
-    public List<ArrayList<String>> Blocks = new ArrayList<>();
+    public List<ArrayList> Items = new ArrayList<>();
+    public List<ArrayList> Blocks = new ArrayList<>();
     public List<ArrayList> Textures = new ArrayList<>();
     public List<ArrayList> Models = new ArrayList<>();
     private Server server = KelpModLoader.getPlugin(KelpModLoader.class).getServer();
@@ -38,7 +39,7 @@ public class Mods {
      * @param texture The name of the texture that will be displayed on this item.
      * @param material The base bukkit material of this item.
      */
-    public void addItem(String name, String lore, String texture, String material) {
+    public void addItem(String name, String lore, String texture, Material material) {
         ArrayList Item = new ArrayList<>();
         Item.add(name);
         Item.add(texture);
@@ -54,7 +55,7 @@ public class Mods {
      * @param material The base bukkit material of this item.
      * @param itemType The type of item to use.
      */
-    public void addItem(String name, String lore, String texture, String material, String itemType) {
+    public void addItem(String name, String lore, String texture, Material material, String itemType) {
         ArrayList Item = new ArrayList<>();
         Item.add(name);
         Item.add(texture);
