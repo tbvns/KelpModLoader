@@ -100,7 +100,7 @@ public class GenerateModel {
                     }
 
                     BufferedWriter FileWriter = new BufferedWriter(new FileWriter(ModelsFile, false));
-                    FileWriter.write("{\"parent\": \"minecraft:item/generated\",\"textures\": {\"layer0\": \"minecraft:item/kml_" + I.TextureName +"\"}}");
+                    FileWriter.write("{\"parent\": \""+ I.itemType +"\",\"textures\": {\"layer0\": \"minecraft:item/kml_" + I.TextureName +"\"}}");
                     FileWriter.close();
 
                 } catch (Exception e) {
