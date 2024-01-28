@@ -10,7 +10,7 @@ import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.ItemMeta;
-import xyz.prismenetwork.kelpmodloader.Block.ModdedBlock;
+import xyz.prismenetwork.kelpmodloader.ModsAPI.Block.ModdedBlock;
 import xyz.prismenetwork.kelpmodloader.Constant;
 import xyz.prismenetwork.kelpmodloader.Utils;
 

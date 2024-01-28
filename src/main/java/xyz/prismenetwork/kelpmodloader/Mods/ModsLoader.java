@@ -1,20 +1,18 @@
 package xyz.prismenetwork.kelpmodloader.Mods;
 
 import org.bukkit.Material;
-import org.slf4j.Logger;
-import xyz.prismenetwork.kelpmodloader.Block.RegisterBlock;
+import xyz.prismenetwork.kelpmodloader.ModsAPI.Block.RegisterBlock;
 import xyz.prismenetwork.kelpmodloader.Constant;
-import xyz.prismenetwork.kelpmodloader.Item.RegisterItem;
+import xyz.prismenetwork.kelpmodloader.ModsAPI.Item.RegisterItem;
 import xyz.prismenetwork.kelpmodloader.KelpModLoader;
-import xyz.prismenetwork.kelpmodloader.Models.ModelType;
-import xyz.prismenetwork.kelpmodloader.Models.RegisterModels;
+import xyz.prismenetwork.kelpmodloader.ModsAPI.Models.ModelType;
+import xyz.prismenetwork.kelpmodloader.ModsAPI.Models.RegisterModels;
 import xyz.prismenetwork.kelpmodloader.ModsAPI.Mods;
-import xyz.prismenetwork.kelpmodloader.Texture.RegisterTexture;
-import xyz.prismenetwork.kelpmodloader.Texture.TextureType;
+import xyz.prismenetwork.kelpmodloader.ModsAPI.Texture.RegisterTexture;
+import xyz.prismenetwork.kelpmodloader.ModsAPI.Texture.TextureType;
 
 import java.io.*;
 import java.lang.reflect.Method;
-import java.net.URISyntaxException;
 import java.net.URL;
 import java.net.URLClassLoader;
 import java.nio.file.Path;

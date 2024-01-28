@@ -1,4 +1,4 @@
-package xyz.prismenetwork.kelpmodloader.Block;
+package xyz.prismenetwork.kelpmodloader.ModsAPI.Block;
 
 public class ModdedBlock {
     public String name;

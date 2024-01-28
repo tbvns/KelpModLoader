@@ -1,6 +1,4 @@
-package xyz.prismenetwork.kelpmodloader.Models;
-
-import xyz.prismenetwork.kelpmodloader.Texture.TextureType;
+package xyz.prismenetwork.kelpmodloader.ModsAPI.Models;
 
 public class ModelType {
     public static ModelType Block() {

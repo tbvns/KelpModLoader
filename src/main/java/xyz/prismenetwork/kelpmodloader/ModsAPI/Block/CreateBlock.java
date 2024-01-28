@@ -1,4 +1,4 @@
-package xyz.prismenetwork.kelpmodloader.Block;
+package xyz.prismenetwork.kelpmodloader.ModsAPI.Block;
 
 import org.bukkit.Material;
 import org.bukkit.Server;

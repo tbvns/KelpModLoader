@@ -1,10 +1,10 @@
 package xyz.prismenetwork.kelpmodloader;
 
-import xyz.prismenetwork.kelpmodloader.Block.ModdedBlock;
-import xyz.prismenetwork.kelpmodloader.Item.ModdedItem;
+import xyz.prismenetwork.kelpmodloader.ModsAPI.Block.ModdedBlock;
+import xyz.prismenetwork.kelpmodloader.ModsAPI.Item.ModdedItem;
 import xyz.prismenetwork.kelpmodloader.Mods.ModsObject;
-import xyz.prismenetwork.kelpmodloader.Models.Model;
-import xyz.prismenetwork.kelpmodloader.Texture.Texture;
+import xyz.prismenetwork.kelpmodloader.ModsAPI.Models.Model;
+import xyz.prismenetwork.kelpmodloader.ModsAPI.Texture.Texture;
 
 import java.util.ArrayList;
 

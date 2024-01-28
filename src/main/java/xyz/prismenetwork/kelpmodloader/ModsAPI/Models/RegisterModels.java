@@ -1,10 +1,7 @@
-package xyz.prismenetwork.kelpmodloader.Models;
+package xyz.prismenetwork.kelpmodloader.ModsAPI.Models;
 
-import org.bukkit.Material;
 import xyz.prismenetwork.kelpmodloader.Constant;
-import xyz.prismenetwork.kelpmodloader.Item.ModdedItem;
 
-import java.io.File;
 import java.io.InputStream;
 
 public class RegisterModels {

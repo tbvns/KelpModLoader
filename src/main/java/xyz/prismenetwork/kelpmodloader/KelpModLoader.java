@@ -1,11 +1,10 @@
 package xyz.prismenetwork.kelpmodloader;
 
-import org.bukkit.Material;
 import org.bukkit.plugin.java.JavaPlugin;
-import xyz.prismenetwork.kelpmodloader.Block.CreateBlock;
+import xyz.prismenetwork.kelpmodloader.ModsAPI.Block.CreateBlock;
 import xyz.prismenetwork.kelpmodloader.EventHandler.BlockPlaceEvent;
 import xyz.prismenetwork.kelpmodloader.EventHandler.BlockUpdateEvent;
-import xyz.prismenetwork.kelpmodloader.Item.GenerateBlockItems;
+import xyz.prismenetwork.kelpmodloader.ModsAPI.Item.GenerateBlockItems;
 import xyz.prismenetwork.kelpmodloader.Mods.ModsLoader;
 import xyz.prismenetwork.kelpmodloader.Pack.CreatePack;
 

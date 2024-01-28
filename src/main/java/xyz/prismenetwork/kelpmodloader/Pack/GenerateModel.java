@@ -1,9 +1,9 @@
 package xyz.prismenetwork.kelpmodloader.Pack;
 
 import org.bukkit.Material;
-import xyz.prismenetwork.kelpmodloader.Block.ModdedBlock;
+import xyz.prismenetwork.kelpmodloader.ModsAPI.Block.ModdedBlock;
 import xyz.prismenetwork.kelpmodloader.Constant;
-import xyz.prismenetwork.kelpmodloader.Item.ModdedItem;
+import xyz.prismenetwork.kelpmodloader.ModsAPI.Item.ModdedItem;
 import xyz.prismenetwork.kelpmodloader.KelpModLoader;
 
 import java.io.BufferedWriter;
