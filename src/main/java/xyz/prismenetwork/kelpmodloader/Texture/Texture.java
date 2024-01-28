@@ -1,4 +1,4 @@
-package xyz.prismenetwork.kelpmodloader.ModsAPI.Texture;
+package xyz.prismenetwork.kelpmodloader.Texture;
 
 import java.io.InputStream;
 

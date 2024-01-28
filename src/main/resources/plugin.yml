@@ -2,3 +2,5 @@ name: KelpModLoader
 version: '${project.version}'
 main: xyz.prismenetwork.kelpmodloader.KelpModLoader
 api-version: '1.20'
+depend:
+  - ProtocolLib

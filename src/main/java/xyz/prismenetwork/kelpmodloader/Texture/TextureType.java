@@ -1,4 +1,4 @@
-package xyz.prismenetwork.kelpmodloader.ModsAPI.Texture;
+package xyz.prismenetwork.kelpmodloader.Texture;
 
 public class TextureType {
     public static TextureType Block() {

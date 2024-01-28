@@ -3,9 +3,9 @@ package xyz.prismenetwork.kelpmodloader.ModsAPI;
 import org.bukkit.Material;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.ItemMeta;
-import xyz.prismenetwork.kelpmodloader.ModsAPI.Block.ModdedBlock;
+import xyz.prismenetwork.kelpmodloader.Block.ModdedBlock;
 import xyz.prismenetwork.kelpmodloader.Constant;
-import xyz.prismenetwork.kelpmodloader.ModsAPI.Item.ModdedItem;
+import xyz.prismenetwork.kelpmodloader.Item.ModdedItem;
 
 public class ItemUtils {
     public static boolean isModed(ItemStack itemStack) {

@@ -1,7 +1,9 @@
-package xyz.prismenetwork.kelpmodloader.ModsAPI.Models;
+package xyz.prismenetwork.kelpmodloader.Models;
 
-import xyz.prismenetwork.kelpmodloader.ModsAPI.Texture.Texture;
+import xyz.prismenetwork.kelpmodloader.Item.ItemType;
+import xyz.prismenetwork.kelpmodloader.Texture.Texture;
 
+import java.io.File;
 import java.io.InputStream;
 import java.util.HashMap;
 

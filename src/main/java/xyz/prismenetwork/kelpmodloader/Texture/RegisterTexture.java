@@ -1,4 +1,4 @@
-package xyz.prismenetwork.kelpmodloader.ModsAPI.Texture;
+package xyz.prismenetwork.kelpmodloader.Texture;
 
 import xyz.prismenetwork.kelpmodloader.Constant;
 

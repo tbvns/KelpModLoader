@@ -1,4 +1,4 @@
-package xyz.prismenetwork.kelpmodloader.ModsAPI.Item;
+package xyz.prismenetwork.kelpmodloader.Item;
 
 public class ItemType {
     public static final String Default = "minecraft:item/generated";

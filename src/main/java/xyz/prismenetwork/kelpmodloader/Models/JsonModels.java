@@ -1,4 +1,4 @@
-package xyz.prismenetwork.kelpmodloader.ModsAPI.Models;
+package xyz.prismenetwork.kelpmodloader.Models;
 
 import java.util.ArrayList;
 
