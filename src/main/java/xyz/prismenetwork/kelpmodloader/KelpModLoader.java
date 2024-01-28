@@ -1,20 +1,26 @@
 package xyz.prismenetwork.kelpmodloader;
 
-import org.bukkit.Material;
 import org.bukkit.plugin.java.JavaPlugin;
 import xyz.prismenetwork.kelpmodloader.Block.CreateBlock;
+import xyz.prismenetwork.kelpmodloader.Dependency.DependencyManager;
 import xyz.prismenetwork.kelpmodloader.EventHandler.BlockPlaceEvent;
 import xyz.prismenetwork.kelpmodloader.EventHandler.BlockUpdateEvent;
 import xyz.prismenetwork.kelpmodloader.Item.GenerateBlockItems;
 import xyz.prismenetwork.kelpmodloader.Mods.ModsLoader;
 import xyz.prismenetwork.kelpmodloader.Pack.CreatePack;
+import xyz.prismenetwork.kelpmodloader.Dependency.Downloader;
 
 import java.io.IOException;
 
 public final class KelpModLoader extends JavaPlugin {
+    public static KelpModLoader getInstance = null;
 
     @Override
     public void onEnable() {
+        getInstance = this;
+
+        DependencyManager.check();
+
         getServer().getConsoleSender().sendMessage( "\n" +
                 "§2---------------------------------- \n" +
                 "        §2[ §aKelp Mod Loader §2]    \n" +
