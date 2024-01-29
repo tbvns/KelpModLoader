@@ -58,15 +58,20 @@ public class BreakManager {
                         }
                     });
 
-                    breakstage = ((Instant.now().toEpochMilli() - PlayerBreakingTime.get(p))*1000)/20f;
+                    breakstage = ((((Instant.now().toEpochMilli() - PlayerBreakingTime.get(p)))/20f)*9)/block[0].getBreakTime();
 
                     PacketContainer container = new PacketContainer(PacketType.Play.Server.BLOCK_BREAK_ANIMATION);
                     container.getIntegers().write(0, p.getEntityId()*1000);
                     container.getIntegers().write(1, Math.round(breakstage));
                     container.getBlockPositionModifier().write(0, new BlockPosition(b.getX(), b.getY(), b.getZ()));
 
-                    if (breakstage > block[0].getBreakTime()) {
+                    if (breakstage > 9) {
                         b.breakNaturally();
+
+                        PacketContainer container2 = new PacketContainer(PacketType.Play.Server.BLOCK_BREAK_ANIMATION);
+                        container2.getIntegers().write(0, p.getEntityId()*1000);
+                        container2.getIntegers().write(1, 10);
+                        container2.getBlockPositionModifier().write(0, new BlockPosition(b.getX(), b.getY(), b.getZ()));
                     }
 
                     ProtocolLibrary.getProtocolManager().sendServerPacket(p, container);
