@@ -53,6 +53,12 @@ public class BlockBreakEvent implements Listener {
         if (BreakManager.PlayerBreakingTime.containsKey(event.getPlayer())) {
             BreakManager.PlayerBreakingTime.remove(event.getPlayer());
         }
+
+        PacketContainer container = new PacketContainer(PacketType.Play.Server.BLOCK_BREAK_ANIMATION);
+        container.getIntegers().write(0, event.getPlayer().getEntityId()*1000);
+        container.getIntegers().write(1, 10);
+        container.getBlockPositionModifier().write(0, new BlockPosition(event.getBlock().getX(), event.getBlock().getY(), event.getBlock().getZ()));
+        ProtocolLibrary.getProtocolManager().sendServerPacket(event.getPlayer(), container);
     }
 
 }
