@@ -69,10 +69,11 @@ public class Mods {
      * @param name The name that will be used to refer to this block.
      * @param texture The name of the texture that will be displayed on this block.
      */
-    public void addBlock(String name, String texture) {
+    public void addBlock(String name, String texture, int BreakTime) {
         ArrayList Block = new ArrayList<>();
         Block.add(name);
         Block.add(texture);
+        Block.add(BreakTime);
         Blocks.add(Block);
     }
     /**

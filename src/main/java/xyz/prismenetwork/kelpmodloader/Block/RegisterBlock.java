@@ -8,13 +8,14 @@ public class RegisterBlock {
      * @param name The name that will be used to refer to this block.
      * @param texture The name of the texture that will be displayed on this block.
      */
-    public void Register(String name, String texture) {
+    public void Register(String name, String texture, int BreakTime) {
         int id = Constant.blockCount;
         Constant.blockCount++;
         ModdedBlock block = new ModdedBlock();
         block.setID(id);
         block.TextureName = texture;
         block.name = name;
+        block.setBreakTime(BreakTime);
         Constant.Blocks.add(block);
 
     }

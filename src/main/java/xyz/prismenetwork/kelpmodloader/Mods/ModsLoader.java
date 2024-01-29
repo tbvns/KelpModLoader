@@ -105,7 +105,7 @@ public class ModsLoader {
                     });
 
                     mods.Blocks.forEach(b -> {
-                        new RegisterBlock().Register((String) b.get(0),(String) b.get(1));
+                        new RegisterBlock().Register((String) b.get(0),(String) b.get(1), (Integer) b.get(2));
                     });
 
                     mods.Textures.forEach(t -> {
