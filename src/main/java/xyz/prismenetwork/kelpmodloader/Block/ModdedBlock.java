@@ -3,6 +3,7 @@ package xyz.prismenetwork.kelpmodloader.Block;
 public class ModdedBlock {
     public String name;
     public String TextureName;
+    private int BreakTime = 1;
     private int ID;
     /**
      * Return the id of the block.
@@ -17,5 +18,14 @@ public class ModdedBlock {
      */
     public void setID(int nID) {
         ID = nID;
+    }
+
+
+    public int getBreakTime() {
+        return BreakTime;
+    }
+
+    public void setBreakTime(int breakTime) {
+        BreakTime = breakTime;
     }
 }

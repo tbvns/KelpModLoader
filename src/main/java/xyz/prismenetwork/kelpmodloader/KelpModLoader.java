@@ -1,14 +1,15 @@
 package xyz.prismenetwork.kelpmodloader;
 
 import org.bukkit.plugin.java.JavaPlugin;
+import xyz.prismenetwork.kelpmodloader.Block.BreakHandler.BreakManager;
 import xyz.prismenetwork.kelpmodloader.Block.CreateBlock;
 import xyz.prismenetwork.kelpmodloader.Dependency.DependencyManager;
+import xyz.prismenetwork.kelpmodloader.Block.BreakHandler.BlockBreakEvent;
 import xyz.prismenetwork.kelpmodloader.EventHandler.BlockPlaceEvent;
 import xyz.prismenetwork.kelpmodloader.EventHandler.BlockUpdateEvent;
 import xyz.prismenetwork.kelpmodloader.Item.GenerateBlockItems;
 import xyz.prismenetwork.kelpmodloader.Mods.ModsLoader;
 import xyz.prismenetwork.kelpmodloader.Pack.CreatePack;
-import xyz.prismenetwork.kelpmodloader.Dependency.Downloader;
 
 import java.io.IOException;
 
@@ -30,6 +31,7 @@ public final class KelpModLoader extends JavaPlugin {
         //Register event
         getServer().getPluginManager().registerEvents(new BlockUpdateEvent(), this);
         getServer().getPluginManager().registerEvents(new BlockPlaceEvent(), this);
+        getServer().getPluginManager().registerEvents(new BlockBreakEvent(), this);
 
         //Load mods
         new ModsLoader().load();
@@ -60,6 +62,8 @@ public final class KelpModLoader extends JavaPlugin {
                 "§2Status: §aStarted                \n" +
                 "§2Task: §aKML is loaded!      \n" +
                 "§2---------------------------------- ");
+
+        BreakManager.Setup();
     }
 
     @Override
